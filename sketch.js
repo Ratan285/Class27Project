@@ -12,12 +12,10 @@ function preload()
 function setup() {
 	createCanvas(800, 700);
 
-
 	engine = Engine.create();
 	world = engine.world;
 
 	//Create the Bodies Here.
-
 
 	Engine.run(engine);
   
