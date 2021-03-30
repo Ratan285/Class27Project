@@ -3,22 +3,22 @@ class Bob{
         var options = {
             density:1.2,
             restitution:0.7,
-            friction:1
+            friction:1,
+            isStatic: true
         }
-     this.body = Bodies.rectangle(x,y,50,50,options)
-     this.width = 80;
-     this.height = 80;
-     this.image = loadImage("paper.png");
+     this.body = Bodies.circle(x, y,40,options)
+     this.radius = 140;
      World.add(world, this.body);
     }
     display(){
         
         var pos = this.body.position;
-        
+        push();
         fill("red");
-        //translate(pos.x, pos.y);
-        imageMode(CENTER);
-        image(this.image, pos.x, pos.y, this.width, this.height);
+        translate(pos.x, pos.y);
+        rectMode(CENTER);
+        circle(0, 0, this.radius);
+        pop()
 
     }
 }
