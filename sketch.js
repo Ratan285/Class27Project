@@ -18,7 +18,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	roof = new Roof(400,150,700,70);
+	roof = new Roof(415,150,700,70);
 
     bobObject1 = new Bob(140,600);
 	bobObject2 = new Bob(280,600);
@@ -26,11 +26,11 @@ function setup() {
 	bobObject4 = new Bob(560,600);
 	bobObject5 = new Bob(700,600);
 
-	rope1 = new Rope(bobObject1.body, roof.body, 140, 0);
-	rope2 = new Rope(bobObject2.body, roof.body, 280, 0);
-	rope3 = new Rope(bobObject3.body, roof.body, 420, 0);
-	rope4 = new Rope(bobObject4.body, roof.body, 560, 0);
-	rope5 = new Rope(bobObject5.body, roof.body, 700, 0);
+	rope1 = new Rope(bobObject1.body, roof.body, -280, 0);
+	rope2 = new Rope(bobObject2.body, roof.body, -140, 0);
+	rope3 = new Rope(bobObject3.body, roof.body, 0, 0);
+	rope4 = new Rope(bobObject4.body, roof.body, 140,0, 0);
+	rope5 = new Rope(bobObject5.body, roof.body, 280, 0);
 
 	Engine.run(engine);
 
@@ -39,7 +39,7 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background(255);
 
   push();
   textSize(30);
@@ -59,6 +59,14 @@ function draw() {
   rope5.display();
   
 }
+function keyPressed(){
+if(keyCode = 38){
+Matter.Body.applyForce(bobObject5.body,bobObject5.body.position,{x:200,y:-200})
+}
 
+
+
+
+}
 
 
